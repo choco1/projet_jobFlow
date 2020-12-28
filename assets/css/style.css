@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .background{
+      height: 100vh;
+      width: 100%;
+  }
+  
+  /************** NAVBAR *******************/
+  .navbar {
+      width: 100%;
+      height: 15vh;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      min-height: 8vh;
+      background-color:black
+  }
+  
+  .circle {
+    height: 85px;
+    width: 85px;
+    background-color: #F4FDFA;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .logo {
+     margin-top: 8px;
+     margin-left: 11px;
+     width: 60px;
+     height: 60px;
+  }
+  
+  
+  .nav-links {
+      display: flex;
+      justify-content: space-around;
+      width: 40%;
+  }
+  .nav-links li {
+      list-style: none;
+  }
+  .nav-links a {
+      color: #2D493F;
+      text-decoration: none;
+      letter-spacing: 3px;
+      font-weight: bold;
+      font-size: 18px;
+       font-family: 'Poppins', sans-serif;
+  
+  }
+  
+  .btn {
+      width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: none;
+     background-color: transparent;
+  }
+  .connected {
+      width: 150px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  /************** NAVBAR *******************/
+  
+  
+  
+  /************** BOX SEARCH *******************/
+  
+  .search-box {
+      margin: auto;
+      height: 75vh;
+      width: 55%;
+      background-color: #e4f6f0;
+      border-radius: 20px;
+  }
+  
+  input[type="checkbox"]{
+      display: none;
+  }
+  .iconSearch {
+      margin-left: 21px;
+      margin-top: 21px;
+      width: 30px;
+      height: 30px;
+  }
+  
+  .box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      transition: .5s;
+  }
+  .box label {
+      position: absolute;
+      right: 0;
+      margin-top: -180px;
+      width: 70px;
+      height: 70px;
+      line-height: 50px;
+      border-radius: 50%;
+      opacity: 1;
+      box-shadow: -5px -5px 8px #edeff1,
+      5px 5px 10px #cacfd8;
+  }
+  .box label:hover {
+      background-color: #acfbde;
+      box-shadow: -10px -10px 15px #edeff1,
+      5px 5px 15px #cacfd8;
+      transform: scale(1.1);
+  }
+   .box input {
+       width: 100%;
+       height: 100%;
+       background-color: transparent;
+       border: none;
+       border-radius: 35px;
+       outline: none;
+       font-size: 19px;
+       padding-left: 20px;
+       color: gray;
+       box-shadow: -10px -10px 15px #edeff1,
+      5px 5px 15px #cacfd8;
+      opacity: 0;  
+   }
+  
+   .box input:focus {
+       box-shadow: -15px -15px 40px #edeff1,
+      10px 10px 40px #cacfd8;
+   } 
+  
+   #check:checked+.box {
+       width: 500px;
+   }
+   
+   #check:checked+.box > input{
+       opacity: 1;
+       margin-bottom: 20px;  
+   }
+   #check:checked+.box > label{
+       box-shadow: none;
+   }
+   #check:checked+.box > label:hover{
+       transform: scale(1);
+   }
+  
+   /************** BOX SEARCH *******************/
