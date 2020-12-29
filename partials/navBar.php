@@ -19,7 +19,7 @@
       <div class="flex items-center justify-between h-30">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <img class="h-20 w-20 logo" src="../fonts/jobflow.png" alt="">
+            <img class="h-20 w-20 logo" src="../fonts/logo-write.png" alt="">
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
