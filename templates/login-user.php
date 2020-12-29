@@ -6,7 +6,7 @@
 <body class="login-user-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="../templates/index.php">
-            <img class="mx-auto h-14" src="../fonts/home-solid.svg" alt="">
+            <img class="mx-auto h-16" src="../fonts/home-light.svg" alt="">
         </a>
     </header>
 
