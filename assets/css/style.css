@@ -6,13 +6,14 @@
 
   .bg-laptop{
       background-image: url(../../fonts/image.jpg);
+      height: 500px;
   }
 
   .title{
       color:#111827;
-      font-size: 40px;
+      font-size: 50px;
       text-align: center;
-      padding-top: 3%;
+      padding-top: 6%;
   }
 
   .background{
@@ -34,7 +35,7 @@
   
   .box {
       position: absolute;
-      top: 70%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 70px;
@@ -45,7 +46,6 @@
   .box label {
       position: absolute;
       right: 0;
-      margin-top: -180px;
       width: 70px;
       height: 70px;
       line-height: 50px;
@@ -61,8 +61,6 @@
       transform: scale(1.1);
   }
    .box input {
-       flex-wrap: wrap;
-       justify-content: space-around;
        width: 100%;
        height: 100%;
        background-color: transparent;
@@ -98,3 +96,11 @@
    }
   
    /************** BOX SEARCH *******************/
+
+/************** FOOTER *******************/
+
+    .element{
+       display: flex; 
+       justify-content: space-around;
+    }
+
