@@ -1,15 +1,9 @@
+<link rel="stylesheet" href="../assets/css/style.css">
 <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-    .body-bg {
-        background-color: #2a2a72;
-        background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
-    }
-</style>
 
-
-<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+<body class="login-user-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="../templates/index.php">
             <img class="mx-auto h-14" src="../fonts/home-solid.svg" alt="">
