@@ -4,6 +4,10 @@
     box-sizing: border-box;
   }
   
+  .bg-laptop {
+      object-fit: cover;
+  }
+
   .background{
       height: 100vh;
       width: 100%;
