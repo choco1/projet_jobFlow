@@ -38,7 +38,7 @@
   
             <div class="relative inline-block text-left">
                  <div>
-                   <button type="button" id="menu-btn" class="inline-flex justify-center bg-blue-400 p-3  rounded-full text-gray-900 hover:text-grey focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-green-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                   <button type="button" id="menu-btn" class="inline-flex justify-center bg-blue-400 p-3  rounded-full text-gray-900 hover:text-grey focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-gray-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
                      Connexion
                      <!-- Heroicon name: chevron-down -->
                      <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -50,7 +50,7 @@
                   <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                     <div id="dropdown" class="py-1 hidden" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                       <div >
-                        <a href="#" class=" flex flex-wrap block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
+                        <a href="../templates/login-user.php" class=" flex flex-wrap block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
                         <img class="object-scale-down h-10" src="../fonts/user.svg" alt="">
                         <p class="text-center mx-3 my-2">Candidat</p>
                         </a>

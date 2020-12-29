@@ -4,7 +4,7 @@
 
 
 <div class=" bg-laptop bg-cover bg-center">
-    <h1 class="title ">Votre Avenir Profetionnel est avec Nous</h1>
+    <h1 class="title ">Votre Avenir Professionnel est avec Nous</h1>
 
 
 
