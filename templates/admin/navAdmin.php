@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobFlow.com</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>jobFlow</title>
+    <link rel="stylesheet" href="../../assets/css/admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-
 <body>
+    
 <div>
-  <nav class="bg-gray-900">
+  <nav class="bg-gray-200">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-30">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <img class="h-20 w-20 logo" src="../fonts/logo-write.png" alt="">
+            <img class="h-20 w-20 logo" src="../../fonts/logo-write.png" alt="">
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
 
-              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Offres</a>
+              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Publiez vos offres</a>
 
-              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">A propos</a>
+              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Trouvez des candidats</a>
 
-              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Conseils</a>
+              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">CV thèque</a>
             </div>
           </div>
         </div>
@@ -45,26 +43,6 @@
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
             </button>
-          </div>
-
-
-          
-
-          <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-            <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-              <div >
-                <a href="#" class=" flex flex-wrap block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
-                <img class="object-scale-down h-10" src="../fonts/user.svg" alt="">
-                <p class="text-center mx-3 my-2">Candidat</p>
-                </a>
-              </div>
-              <div >
-                <a href="#" class=" flex flex-wrap block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
-                <img class="object-scale-down h-10 " src="../fonts/group-refresh.svg" alt="">
-                <p class="text-center mx-3 my-2">Recruteur</p>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -118,7 +96,5 @@
 </div>
 
 
-    <script src="script.js"></script>
 </body>
-
 </html>
