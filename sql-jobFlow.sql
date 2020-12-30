@@ -15,6 +15,19 @@ CREATE SCHEMA IF NOT EXISTS `jobflow` DEFAULT CHARACTER SET utf8 ;
 USE `jobflow` ;
 
 -- -----------------------------------------------------
+-- Table `jobflow`.`profilEntreprise`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `jobflow`.`profilEntreprise` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `logo` VARCHAR(255) NOT NULL,
+  `nameEntreprise` VARCHAR(255) NOT NULL,
+  `descriptionEntreprise` TEXT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `jobflow`.`entreprise`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jobflow`.`entreprise` (
@@ -22,7 +35,15 @@ CREATE TABLE IF NOT EXISTS `jobflow`.`entreprise` (
   `username` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`))
+  `profilEntreprise_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_entreprise_profilEntreprise1_idx` (`profilEntreprise_id` ASC) VISIBLE,
+  CONSTRAINT `fk_entreprise_profilEntreprise1`
+    FOREIGN KEY (`profilEntreprise_id`)
+    REFERENCES `jobflow`.`profilEntreprise` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -35,12 +56,14 @@ CREATE TABLE IF NOT EXISTS `jobflow`.`annonces` (
   `imageEntreprise` VARCHAR(255) NULL,
   `date` DATETIME NOT NULL,
   `description` TEXT NOT NULL,
+  `technologie` TEXT NOT NULL,
   `ville` VARCHAR(255) NOT NULL,
   `typeEmploi` TEXT NOT NULL,
   `salaire` INT NULL,
   `entreprise_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_annonces_entreprise_idx` (`entreprise_id` ASC),
+  INDEX `fk_annonces_entreprise_idx` (`entreprise_id` ASC) VISIBLE,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   CONSTRAINT `fk_annonces_entreprise`
     FOREIGN KEY (`entreprise_id`)
     REFERENCES `jobflow`.`entreprise` (`id`)
@@ -55,7 +78,19 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `jobflow`.`cv` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name_cv` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `jobflow`.`lettreDeMotivation`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `jobflow`.`lettreDeMotivation` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `lettre` TEXT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -69,38 +104,19 @@ CREATE TABLE IF NOT EXISTS `jobflow`.`user` (
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
   `cv_id` INT NOT NULL,
+  `lettreDeMotivation_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_user_cv1_idx` (`cv_id` ASC),
+  INDEX `fk_user_cv1_idx` (`cv_id` ASC) VISIBLE,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_user_lettreDeMotivation1_idx` (`lettreDeMotivation_id` ASC) VISIBLE,
   CONSTRAINT `fk_user_cv1`
     FOREIGN KEY (`cv_id`)
     REFERENCES `jobflow`.`cv` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `jobflow`.`type`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jobflow`.`type` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `type_langage` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `jobflow`.`technologie`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jobflow`.`technologie` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `langage` VARCHAR(255) NOT NULL,
-  `type_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_technologie_type1_idx` (`type_id` ASC),
-  CONSTRAINT `fk_technologie_type1`
-    FOREIGN KEY (`type_id`)
-    REFERENCES `jobflow`.`type` (`id`)
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_lettreDeMotivation1`
+    FOREIGN KEY (`lettreDeMotivation_id`)
+    REFERENCES `jobflow`.`lettreDeMotivation` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -113,8 +129,8 @@ CREATE TABLE IF NOT EXISTS `jobflow`.`annonces_has_user` (
   `annonces_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`annonces_id`, `user_id`),
-  INDEX `fk_annonces_has_user_user1_idx` (`user_id` ASC),
-  INDEX `fk_annonces_has_user_annonces1_idx` (`annonces_id` ASC),
+  INDEX `fk_annonces_has_user_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_annonces_has_user_annonces1_idx` (`annonces_id` ASC) VISIBLE,
   CONSTRAINT `fk_annonces_has_user_annonces1`
     FOREIGN KEY (`annonces_id`)
     REFERENCES `jobflow`.`annonces` (`id`)
@@ -129,41 +145,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `jobflow`.`technologie_has_annonces`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jobflow`.`technologie_has_annonces` (
-  `technologie_id` INT NOT NULL,
-  `annonces_id` INT NOT NULL,
-  PRIMARY KEY (`technologie_id`, `annonces_id`),
-  INDEX `fk_technologie_has_annonces_annonces1_idx` (`annonces_id` ASC),
-  INDEX `fk_technologie_has_annonces_technologie1_idx` (`technologie_id` ASC),
-  CONSTRAINT `fk_technologie_has_annonces_technologie1`
-    FOREIGN KEY (`technologie_id`)
-    REFERENCES `jobflow`.`technologie` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_technologie_has_annonces_annonces1`
-    FOREIGN KEY (`annonces_id`)
-    REFERENCES `jobflow`.`annonces` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `jobflow`.`profilEntreprise`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `jobflow`.`profilEntreprise` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `logo` VARCHAR(255) NOT NULL,
-  `nameEntreprise` VARCHAR(255) NOT NULL,
-  `descriptionEntreprise` TEXT NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `jobflow`.`conseils`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jobflow`.`conseils` (
@@ -171,8 +152,8 @@ CREATE TABLE IF NOT EXISTS `jobflow`.`conseils` (
   `title` VARCHAR(255) NOT NULL,
   `image` VARCHAR(255) NULL,
   `descriptionConseils` TEXT NOT NULL,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 

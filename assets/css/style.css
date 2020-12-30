@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
   }
-
   .bg-laptop{
       background-image: url(../../fonts/image.jpg);
       height: 500px;
@@ -14,23 +13,34 @@
       font-size: 50px;
       text-align: center;
       padding-top: 6%;
+
   }
 
   .background{
       height: 100vh;
       width: 100%;
   }
+  .login-user-bg {
+        background: linear-gradient(to right, #141414 39%, #062d89 100%);
+    }
   
+  h1 {
+      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  }
+
+  .btn1 {
+      outline: none;
+  }
   /************** BOX SEARCH *******************/
   
   input[type="checkbox"]{
       display: none;
   }
   .iconSearch {
-      margin-left: 21px;
+      margin-left: 22px;
       margin-top: 21px;
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
   }
   
   .box {
@@ -51,28 +61,29 @@
       line-height: 50px;
       border-radius: 50%;
       opacity: 1;
-      box-shadow: -5px -5px 8px #edeff1,
-      5px 5px 10px #cacfd8;
+      box-shadow: -5px -5px 8px #e7ecf2,
+      5px 5px 10px #e3e5ea;
   }
   .box label:hover {
       background-color: #60A5FA;
       box-shadow: -10px -10px 30px #e4ebf0,
       5px 5px 15px #cacfd8;
-      transform: scale(1.1);
+      transform: scale(1.2);
   }
    .box input {
        width: 100%;
        height: 100%;
-       background-color: transparent;
+       background-color: white;
        border: none;
        border-radius: 35px;
        outline: none;
-       font-size: 19px;
-       padding-left: 20px;
-       color: black;
+       font-size: 20px;
+       margin-left: 10px;
+       padding-left: 25px;
+       color: rgb(0, 0, 0);
        box-shadow: -10px -10px 15px #edeff1,
-      5px 5px 15px #cacfd8;
-      opacity: 0;  
+       5px 5px 15px #dde0e5;
+       opacity: 0;  
    }
   
    .box input:focus {
@@ -81,7 +92,7 @@
    } 
   
    #check:checked+.box {
-       width: 500px;
+       width: 750px;
    }
    
    #check:checked+.box > input{
@@ -90,17 +101,16 @@
    }
    #check:checked+.box > label{
        box-shadow: none;
+       margin-left: 40px;
    }
    #check:checked+.box > label:hover{
        transform: scale(1);
    }
   
    /************** BOX SEARCH *******************/
+   /************** FOOTER *******************/
 
-/************** FOOTER *******************/
-
-    .element{
-       display: flex; 
-       justify-content: space-around;
-    }
-
+   .element{
+    display: flex; 
+    justify-content: space-around;
+ }
