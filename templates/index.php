@@ -1,8 +1,6 @@
 <?php require '../partials/navBar.php'; ?>
 
 
-
-
 <div class=" bg-laptop bg-cover bg-center">
     <h1 class="title ">Votre Avenir Professionnel est avec Nous</h1>
 
@@ -21,3 +19,7 @@
         </div>
 
     </div>
+
+</div>
+
+    <?php require '../partials/footer.php'; ?>
