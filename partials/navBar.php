@@ -14,7 +14,7 @@
 
 <body>
 <div>
-  <nav class="bg-gray-900">
+  <nav class="bg-gray-800 bg-opacity-80">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-30">
         <div class="flex items-center">
@@ -22,13 +22,13 @@
             <img class="h-20 w-20 logo" src="../fonts/logo-write.png" alt="">
           </div>
           <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-4">
+            <div class="blod ml-10 flex items-baseline space-x-4">
 
               <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Offres</a>
 
               <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">A propos</a>
 
-              <a href="#" class="text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Conseils</a>
+              <a href="#" class=" text-blue-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Conseils</a>
             </div>
           </div>
         </div>

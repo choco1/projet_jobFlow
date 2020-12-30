@@ -7,13 +7,15 @@
       background-image: url(../../fonts/image.jpg);
       height: 500px;
   }
+   
+  
+  
 
   .title{
       color:#111827;
       font-size: 50px;
       text-align: center;
       padding-top: 6%;
-
   }
 
   .background{
