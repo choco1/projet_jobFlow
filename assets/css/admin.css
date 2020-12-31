@@ -9,4 +9,10 @@
       background-size: cover;
   }
 
- 
+ .nav-tabs{
+    border-bottom-width : 0 !important;
+ }
+
+ li {
+     width: 21%;
+ }
